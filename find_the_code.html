@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Code</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling for continuous feel */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle bounce animation for the arrow */
+        @keyframes floatDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(16px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: floatDown 2s infinite ease-in-out;
+        }
+
+        /* Glow effect for the secret code */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Section 1: Initial Screen -->
+    <section class="h-screen w-full flex flex-col justify-center items-center p-6 text-center select-none">
+        <h1 class="text-2xl md:text-4xl font-light tracking-widest uppercase mb-8 text-gray-300">
+            Scroll down to find the code
+        </h1>
+        
+        <!-- Down Arrow Icon -->
+        <div class="animate-bounce-slow text-gray-400">
+            <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Spacer to ensure significant scrolling distance -->
+    <div class="h-[150vh]"></div>
+
+    <!-- Section 2: Code Screen -->
+    <section class="h-screen w-full flex flex-col justify-center items-center p-6 text-center">
+        <div class="glow-text text-6xl sm:text-8xl md:text-9xl font-mono font-bold tracking-widest text-blue-400">
+            2345
+        </div>
+    </section>
+
+</body>
+</html>
